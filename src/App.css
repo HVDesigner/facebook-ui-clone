@@ -1,5 +1,7 @@
 :root {
   --secondary-icon: #65676b;
+  --primary-button-background: #1877f2;
+  --hover-overlay: rgb(0 0 0 / 5%);
 }
 
 .main {
@@ -8,16 +10,45 @@
   width: 100vw;
 }
 
-.topbar {
+.toolbar {
   background-color: white;
 }
 
-.topbar svg {
+.toolbar svg {
   fill: var(--secondary-icon);
 }
 
-.topbar a {
+.toolbar .active svg {
+  fill: var(--primary-button-background) !important;
+}
+
+.toolbar .toolbar-item {
   max-width: 129.6px;
   min-width: 50px;
   height: 56px;
+  margin-left: 8px;
+}
+
+.toolbar .toolbar-item:first-child {
+  margin-left: 0px !important;
+}
+
+.toolbar-bottom-border-active {
+  bottom: 0;
+  left: 2px;
+  right: 2px;
+  border-bottom: 3px solid var(--primary-button-background);
+  border-top-left-radius: 1px;
+  border-top-right-radius: 1px;
+}
+
+.toolbar-hover-item {
+  background-color: var(--hover-overlay);
+  border-radius: 8px;
+  bottom: 4px;
+  left: 0;
+  right: 0;
+  top: 4px;
+  transition-timing-function: cubic-bezier(0, 0, 1, 1);
+  transition-duration: 150ms;
 }
